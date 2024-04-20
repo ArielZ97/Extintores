@@ -1,7 +1,7 @@
 <mvc:View controllerName="projectparte2.project1.controller.Main_View"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    <Page id="page" title="{i18n>CACA}">
         <content />
     </Page>
 </mvc:View>
