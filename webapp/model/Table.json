@@ -1,0 +1,31 @@
+{
+    "summary": [
+        {
+          "ObjectName": "Clases de fuego",
+          "Status": "Completado satisfactoriamente",
+          "ObjectCount": 10,
+          "LastUpdate": "2024-03-19"
+        },
+        {
+          "ObjectName": "Agente Extintores",
+          "Status": "No iniciada",
+          "ObjectCount": 5,
+          "LastUpdate": "2024-03-18"
+        },
+        {
+          "ObjectName": "Ubicaciones",
+          "Status": "Error",
+          "ObjectCount": 8,
+          "LastUpdate": "2024-03-17"
+        },
+        {
+          "ObjectName": "Extintores",
+          "Status": "Cancelado",
+          "ObjectCount": 3,
+          "LastUpdate": "2024-03-16"
+        }
+        
+      
+      ]
+    }
+    

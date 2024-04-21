@@ -1,7 +1,34 @@
 <mvc:View controllerName="projectparte2.project1.controller.Main_View"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>CACA}">
-        <content />
+    <Page id="page" title="{i18n>title}">
+    
+        <Table id="summaryTable" items="{/summary}" class="hoverableTable">
+            <columns>
+                <Column>
+                    <Text text="Objetos maestros" />
+                </Column>
+                <Column>
+                    <Text text="Estado" />
+                </Column>
+                <Column>
+                    <Text text="Cantidad de objetos" />
+                </Column>
+                <Column>
+                    <Text text="Última actualización" />
+                </Column>
+            </columns>
+               
+            <items>
+                <ColumnListItem press="onItemPress" type="Navigation" >
+                    <cells>
+                        <ObjectAttribute text="{ObjectName}" />
+                        <ObjectStatus text="{Status}" state="{= ${Status} === 'No iniciada' ? 'Error' : ${Status} === 'Error' ? 'Error' : ${Status} === 'Completado satisfactoriamente' ? 'Success' : 'Warning'}" inverted="true" />
+                        <Text text="{ObjectCount}"  />
+                        <Text text="{LastUpdate}"  />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
     </Page>
 </mvc:View>
