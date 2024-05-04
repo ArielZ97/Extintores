@@ -83,6 +83,11 @@
           "target": [
             "TargetMain_View"
           ]
+        },
+        {
+          "name": "detail",
+          "pattern": "detail/{objectName}",
+          "target": "Detail"
         }
       ],
       "targets": {
@@ -91,7 +96,14 @@
           "transition": "slide",
           "clearControlAggregation": false,
           "viewId": "Main_View",
-          "viewName": "Main_View"
+          "viewName": "Main"
+        },
+        "Detail": {
+          "viewType": "XML",
+          "viewId": "Detail_View",
+          "viewName": "Detail",
+          "controlAggregation": "pages",
+          "controlId": "app"
         }
       }
     },

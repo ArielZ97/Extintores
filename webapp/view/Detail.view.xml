@@ -1,0 +1,33 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="projectparte2.project1.controller.Detail">
+  
+   <Page title="{i18n>detailTitle}">
+    <Table id="productsList" items="{/objectName}">
+      <columns>
+        <Column>
+          <Text text="Marca" />
+        </Column>
+        <Column>
+          <Text text="Fecha de Fabricación" />
+        </Column>
+        <Column>
+          <Text text="Fecha de Vencimiento" />
+        </Column>
+        <Column>
+          <Text text="Stock" />
+        </Column>
+      </columns>
+      <items>
+        <ColumnListItem>
+          <cells>
+            <ObjectAttribute text="{marca}" />
+            <ObjectAttribute text="{fechaFabricacion}" />
+            <ObjectAttribute text="{fechaVencimiento}" />
+            <ObjectAttribute text="{stock}" />
+          </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+  </Page>
+  
+</mvc:View>
