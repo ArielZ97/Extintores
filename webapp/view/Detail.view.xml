@@ -7,11 +7,21 @@
   
   <f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}" toggleHeaderOnTitleClick="{/titleClickable}">
 			<!-- DynamicPage Title -->
+			
 			<f:title>
 				<f:DynamicPageTitle>
+				
 					<f:heading>
-						<Title text="Header Title"/>
+						<Title text="{detailModel>/header/ObjectName}"/>
 					</f:heading>
+					<!-- <f:content>
+						<VBox>
+						<Text text="Status: {detailModel>/Status}" />
+						<Text text="ObjectCount: {detailModel>/ObjectCount}" />
+						<Text text="LastUpdate: {detailModel>/LastUpdate}" />
+						</VBox>
+					</f:content> -->
+					
 					<f:breadcrumbs>
 						<Breadcrumbs>
 							<Link text="Home" />
@@ -45,6 +55,7 @@
 						</OverflowToolbar>
 					</f:content>
 					<f:actions>
+					
 						<Button
 								text="Edit"
 								type="Emphasized"

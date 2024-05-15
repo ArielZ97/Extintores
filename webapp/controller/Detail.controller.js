@@ -2,13 +2,16 @@ sap.ui.define([
   "sap/ui/core/mvc/Controller",
   "sap/ui/model/json/JSONModel",
   "sap/m/MessageToast",
-  "sap/ui/core/Fragment"
+  "sap/ui/core/Fragment",
+  "sap/m/Dialog",
+  "sap/m/Text",
+  "sap/m/Button"
       
 ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller,JSONModel,MessageToast) {
+  function (Controller,JSONModel,MessageToast,Dialog, Text, Button) {
       "use strict";
 
       return Controller.extend("projectparte2.project1.controller.Detail", {
@@ -24,21 +27,30 @@ sap.ui.define([
          _onRouteMatched: function(oEvent) {
         
           const oArgs = oEvent.getParameter("arguments");
-          const sObjectName = oArgs.ObjectName;
+          const sObjectName = oArgs.objectName;
         
          const pData = this.getOwnerComponent().getModel().getProperty("/summary")
          //var sObjectName = oEvent.getParameter();
          //Buscar el ID que coincida con sObjectName que coincida ese numero por parametro 
          for (let i = 0; i < pData.length; i++) {
           if (pData[i].ObjectName === sObjectName) {
-              sObjectName = pData[i].id;
+             var oData  = pData[i];
+          
               break; 
             }
           }
           this.getOwnerComponent().getModel().setProperty("/Detalle",sObjectName)
         
-  
+          const oDetailModel = new JSONModel();
+          oDetailModel.setProperty("/header", oData);
+          this.getView().setModel(oDetailModel, "detailModel");
+          debugger
         },
+
+
+        
+        
+        
 //parte dos (SDK)
         getPage : function() {
           return this.byId("dynamicPageId");
@@ -70,5 +82,5 @@ sap.ui.define([
             oPopover.openBy(oSourceControl);
           });
         }
-      });
+     });
     });
