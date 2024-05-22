@@ -5,13 +5,14 @@ sap.ui.define([
   "sap/ui/core/Fragment",
   "sap/m/Dialog",
   "sap/m/Text",
-  "sap/m/Button"
+  "sap/m/Button",
+  "sap/ui/core/Fragment"
       
 ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller,JSONModel,MessageToast,Dialog, Text, Button) {
+  function (Controller,JSONModel,MessageToast,Dialog, Text, Button, Fragment) {
       "use strict";
 
       return Controller.extend("projectparte2.project1.controller.Detail", {
@@ -22,7 +23,7 @@ sap.ui.define([
         oRouter.getRoute("detail").attachMatched(this._onRouteMatched, this);
               
               
-          
+ 
          },
          _onRouteMatched: function(oEvent) {
         
@@ -44,7 +45,7 @@ sap.ui.define([
           const oDetailModel = new JSONModel();
           oDetailModel.setProperty("/header", oData);
           this.getView().setModel(oDetailModel, "detailModel");
-          debugger
+          
         },
 
 
@@ -71,7 +72,7 @@ sap.ui.define([
           if (!this._pPopover) {
             this._pPopover = Fragment.load({
               id: oView.getId(),
-              name: "sap.f.sample.DynamicPageFreeStyle.view.Card"
+              name: "projectparte2/project1/view/DetailPopover.fragment.xml"
             }).then(function (oPopover) {
               oView.addDependent(oPopover);
               return oPopover;
